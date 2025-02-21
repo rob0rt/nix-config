@@ -20,9 +20,9 @@
       "Robert.Lynch@alaskaair.com@SEAHGRLYNCHR" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
         modules = [
-	  nixvim.homeManagerModules.nixvim
-	  ./home.nix
-	];
+         nixvim.homeManagerModules.nixvim
+         ./home.nix
+        ];
       };
     };
   };
