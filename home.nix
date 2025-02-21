@@ -107,12 +107,12 @@
 
       lualine = {
         enable = true;
-	settings = {
+        settings = {
           options = {
             section_separators = {
-	      left = "";
-	      right = "";
-	    };
+              left = "";
+              right = "";
+            };
           };
         };
       };
