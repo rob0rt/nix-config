@@ -87,7 +87,22 @@
 
       web-devicons.enable = true;
 
-      bufferline.enable = true;
+      bufferline = {
+        enable = true;
+
+        settings = {
+          options = {
+            offsets = [
+              {
+                filetype = "neo-tree";
+                text = "File Explorer";
+                highlight = "Directory";
+                separator = true;
+              }
+            ];
+          };
+        };
+      };
 
       neo-tree = {
         enable = true;
@@ -113,6 +128,7 @@
       lualine = {
         enable = true;
         settings = {
+          extensions = [ "neo-tree" ];
           options = {
             section_separators = {
               left = "";
