@@ -81,6 +81,17 @@
       relativenumber = true;
     };
 
+    keymaps = [
+      {
+        action = "<cmd>Telescope live_grep<cr>";
+        key = "<C-p>";
+      }
+      {
+        action = "<cmd>Neotree<CR>";
+        key = "<C-n>";
+      }
+    ];
+
     plugins = {
 
       lazy.enable = true;
@@ -137,6 +148,10 @@
           };
         };
       };
+
+      telescope.enable = true;
+
+      lazygit.enable = true;
     };
   };
 }
