@@ -76,6 +76,11 @@
 
     colorschemes.dracula-nvim.enable = true;
 
+    opts = {
+      number = true;
+      relativenumber = true;
+    };
+
     plugins = {
 
       lazy.enable = true;
