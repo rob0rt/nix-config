@@ -25,7 +25,7 @@
           nixvim.homeManagerModules.nixvim
           ./home.nix
         ];
-	extraSpecialArgs = { inherit host; };
+        extraSpecialArgs = { inherit host; };
       };
     };
   };
