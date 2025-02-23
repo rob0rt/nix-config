@@ -15,18 +15,20 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... }: {
+  outputs = { nixpkgs, home-manager, nixvim, ... }: let
+    homeManagerConfiguration = hostname: let
+      host = import ./hosts/${hostname}.nix { inherit (nixpkgs) lib; };
+    in home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${host.arch};
+      modules = [
+        nixvim.homeManagerModules.nixvim
+        ./home.nix
+      ];
+      extraSpecialArgs = { inherit host; };
+    };
+  in {
     homeConfigurations = {
-      "Robert.Lynch@alaskaair.com@SEAHGRLYNCHR" = let 
-      	host = import ./hosts/seahgrlynchr.nix { inherit (nixpkgs) lib; };
-      in home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        modules = [
-          nixvim.homeManagerModules.nixvim
-          ./home.nix
-        ];
-        extraSpecialArgs = { inherit host; };
-      };
+      "Robert.Lynch@alaskaair.com@SEAHGRLYNCHR" = homeManagerConfiguration "seahgrlynchr";
     };
   };
 }

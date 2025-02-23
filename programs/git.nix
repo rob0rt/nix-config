@@ -3,7 +3,7 @@
 {
   programs.git = {
     enable = true;
-    userName = host.user.name;
+    userName = "Robert Lynch";
     userEmail = host.user.email;
     extraConfig = {
       push.autoSetupRemote = "true";
