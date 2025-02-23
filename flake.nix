@@ -17,12 +17,15 @@
 
   outputs = { nixpkgs, home-manager, nixvim, ... }: {
     homeConfigurations = {
-      "Robert.Lynch@alaskaair.com@SEAHGRLYNCHR" = home-manager.lib.homeManagerConfiguration {
+      "Robert.Lynch@alaskaair.com@SEAHGRLYNCHR" = let 
+      	host = import ./hosts/seahgrlynchr.nix { inherit (nixpkgs) lib; };
+      in home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
         modules = [
-         nixvim.homeManagerModules.nixvim
-         ./home.nix
+          nixvim.homeManagerModules.nixvim
+          ./home.nix
         ];
+	extraSpecialArgs = { inherit host; };
       };
     };
   };

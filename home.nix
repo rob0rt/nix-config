@@ -1,19 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, host, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "Robert.Lynch@alaskaair.com";
-  home.homeDirectory = "/Users/Robert.Lynch@alaskaair.com";
+  home.username = host.username;
+  home.homeDirectory = host.homeDirectory;
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "24.11";
+
+  imports = [
+    ./programs/git.nix
+    ./programs/vim
+  ];
 
   home.packages = [
     pkgs.ripgrep
@@ -55,101 +51,5 @@
     git = true;
     icons = "auto";
     enableZshIntegration = true;
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "Robert Lynch";
-    userEmail = "robert.lynch@alaskaair.com";
-    extraConfig = {
-      push.autoSetupRemote = "true";
-      init.defaultBranch = "main";
-    };
-  };
-
-  programs.nixvim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-
-    colorschemes.dracula-nvim.enable = true;
-
-    opts = {
-      number = true;
-      relativenumber = true;
-    };
-
-    keymaps = [
-      {
-        action = "<cmd>Telescope live_grep<cr>";
-        key = "<C-p>";
-      }
-      {
-        action = "<cmd>Neotree<CR>";
-        key = "<C-n>";
-      }
-    ];
-
-    plugins = {
-
-      lazy.enable = true;
-
-      web-devicons.enable = true;
-
-      bufferline = {
-        enable = true;
-
-        settings = {
-          options = {
-            offsets = [
-              {
-                filetype = "neo-tree";
-                text = "File Explorer";
-                highlight = "Directory";
-                separator = true;
-              }
-            ];
-          };
-        };
-      };
-
-      neo-tree = {
-        enable = true;
-        enableDiagnostics = true;
-        enableGitStatus = true;
-        enableModifiedMarkers = true;
-        enableRefreshOnWrite = true;
-        closeIfLastWindow = true;
-        popupBorderStyle = "rounded";
-        buffers = {
-          bindToCwd = false;
-          followCurrentFile = {
-            enabled = true;
-          };
-        };
-        window = {
-          width = 40;
-          height = 15;
-          autoExpandWidth = false;
-        };
-      };
-
-      lualine = {
-        enable = true;
-        settings = {
-          extensions = [ "neo-tree" ];
-          options = {
-            section_separators = {
-              left = "";
-              right = "";
-            };
-          };
-        };
-      };
-
-      telescope.enable = true;
-    };
   };
 }
