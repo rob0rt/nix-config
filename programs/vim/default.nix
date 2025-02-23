@@ -32,6 +32,8 @@
 
       web-devicons.enable = true;
 
+      guess-indent.enable = true;
+
       bufferline = {
         enable = true;
 
