@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -15,16 +16,17 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... }: let
+  outputs = { nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }@inputs: let
     homeManagerConfiguration = hostname: let
       host = import ./hosts/${hostname}.nix { inherit (nixpkgs) lib; };
+      overlays = import ./overlays.nix { inherit inputs; };
     in home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${host.arch};
       modules = [
         nixvim.homeManagerModules.nixvim
         ./home.nix
       ];
-      extraSpecialArgs = { inherit host; };
+      extraSpecialArgs = { inherit host overlays; };
     };
   in {
     homeConfigurations = {

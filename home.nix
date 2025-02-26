@@ -1,4 +1,4 @@
-{ config, pkgs, host, ... }:
+{ config, pkgs, host, overlays, ... }:
 
 {
   home.username = host.username;
@@ -6,9 +6,14 @@
 
   home.stateVersion = "24.11";
 
+  nixpkgs.overlays = [
+    overlays.unstable-packages
+  ];
+
   imports = [
     ./programs/git.nix
     ./programs/vim
+    ./programs/vscode.nix
   ];
 
   home.packages = [
