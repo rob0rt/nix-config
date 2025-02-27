@@ -9,6 +9,8 @@
       dracula-theme.theme-dracula
       esbenp.prettier-vscode
       vscode-icons-team.vscode-icons
+      yoavbls.pretty-ts-errors
+      bradlc.vscode-tailwindcss
     ];
 
     userSettings = {

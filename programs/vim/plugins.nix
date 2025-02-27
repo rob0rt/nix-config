@@ -5,57 +5,50 @@
 
   guess-indent.enable = true;
 
-  bufferline = {
+  barbar = {
     enable = true;
 
     settings = {
+      sidebar_filetypes = {
+        "neo-tree" = true;
+      };
+    };
+  };
+
+  neo-tree = {
+    enable = true;
+    enableDiagnostics = true;
+    enableGitStatus = true;
+    enableModifiedMarkers = true;
+    enableRefreshOnWrite = true;
+    closeIfLastWindow = true;
+    popupBorderStyle = "rounded";
+    buffers = {
+      bindToCwd = false;
+      followCurrentFile = {
+        enabled = true;
+      };
+    };
+    window = {
+      width = 40;
+      height = 15;
+      autoExpandWidth = false;
+    };
+  };
+
+  lualine = {
+    enable = true;
+    settings = {
+      extensions = [ "neo-tree" ];
       options = {
-          offsets = [
-            {
-              filetype = "neo-tree";
-              text = "File Explorer";
-              highlight = "Directory";
-              separator = true;
-            }
-          ];
+        section_separators = {
+          left = "";
+          right = "";
         };
       };
     };
+  };
 
-    neo-tree = {
-      enable = true;
-      enableDiagnostics = true;
-      enableGitStatus = true;
-      enableModifiedMarkers = true;
-      enableRefreshOnWrite = true;
-      closeIfLastWindow = true;
-      popupBorderStyle = "rounded";
-      buffers = {
-        bindToCwd = false;
-        followCurrentFile = {
-          enabled = true;
-        };
-      };
-      window = {
-        width = 40;
-        height = 15;
-        autoExpandWidth = false;
-      };
-    };
-
-    lualine = {
-      enable = true;
-      settings = {
-        extensions = [ "neo-tree" ];
-        options = {
-          section_separators = {
-            left = "";
-            right = "";
-          };
-        };
-      };
-    };
-
-    telescope.enable = true;
-  }
+  telescope.enable = true;
+}
 
