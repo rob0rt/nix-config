@@ -1,14 +1,10 @@
-{ config, pkgs, host, overlays, ... }:
+{ config, pkgs, host, ... }:
 
 {
   home.username = host.username;
   home.homeDirectory = host.homeDirectory;
 
   home.stateVersion = "24.11";
-
-  nixpkgs.overlays = [
-    overlays.unstable-packages
-  ];
 
   imports = [
     ./programs/git.nix
