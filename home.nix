@@ -29,6 +29,9 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+
+    # npm keys rotated and corepack-installed tools are hard-coded to the old one
+    COREPACK_INTEGRITY_KEYS = "0";
   };
 
   # Let Home Manager install and manage itself.
