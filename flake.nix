@@ -19,9 +19,11 @@
   outputs = { nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }@inputs: let
     homeManagerConfiguration = hostname: let
       host = import ./hosts/${hostname}.nix { inherit (nixpkgs) lib; };
-      overlay = nixpkgs.lib.composeManyExtensions (import ./overlays.nix { inherit inputs; });
     in home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${host.arch}.extend overlay;
+      pkgs = import nixpkgs {
+        system = "${host.arch}";
+        overlays = import ./overlays.nix { inherit inputs; };
+      };
       modules = [
         nixvim.homeManagerModules.nixvim
         ./home.nix
