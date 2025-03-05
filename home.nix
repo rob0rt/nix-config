@@ -18,6 +18,8 @@
     pkgs.corepack_23
     pkgs.jujutsu
     pkgs.lazygit
+    pkgs.hurl
+    pkgs.azure-cli
   ];
 
   home.file = {
