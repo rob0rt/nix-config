@@ -20,6 +20,7 @@
     pkgs.lazygit
     pkgs.hurl
     pkgs.azure-cli
+    pkgs.temporal-cli
   ];
 
   home.file = {
