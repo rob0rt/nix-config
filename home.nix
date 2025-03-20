@@ -12,15 +12,15 @@
     ./programs/vscode.nix
   ];
 
-  home.packages = [
-    pkgs.ripgrep
-    pkgs.nodejs_23
-    pkgs.corepack_23
-    pkgs.jujutsu
-    pkgs.lazygit
-    pkgs.hurl
-    pkgs.azure-cli
-    pkgs.temporal-cli
+  home.packages = with pkgs; [
+    ripgrep
+    nodejs_23
+    corepack_23
+    lazygit
+    hurl
+    azure-cli
+    temporal-cli
+    unstable.go
   ];
 
   home.file = {
