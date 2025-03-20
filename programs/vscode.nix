@@ -11,6 +11,7 @@
       vscode-icons-team.vscode-icons
       yoavbls.pretty-ts-errors
       bradlc.vscode-tailwindcss
+      golang.go
     ];
 
     userSettings = {
