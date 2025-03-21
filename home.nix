@@ -37,26 +37,28 @@
     COREPACK_INTEGRITY_KEYS = "0";
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    # Let Home Manager install and manage itself.
+    home-manager.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    defaultKeymap = "emacs";
-    history = {
-      append = true;
+    zsh = {
+      enable = true;
+      defaultKeymap = "emacs";
+      history = {
+        append = true;
+      };
     };
-  };
 
-  programs.starship = {
-    enable = true;
-    settings = pkgs.lib.importTOML ./configs/starship.toml;
-  };
+    starship = {
+      enable = true;
+      settings = pkgs.lib.importTOML ./configs/starship.toml;
+    };
 
-  programs.eza = {
-    enable = true;
-    git = true;
-    icons = "auto";
-    enableZshIntegration = true;
-  };
+    eza = {
+      enable = true;
+      git = true;
+      icons = "auto";
+      enableZshIntegration = true;
+    };
+  } // host.programs;
 }

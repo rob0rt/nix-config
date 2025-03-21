@@ -11,4 +11,8 @@ in {
   user = {
     email = lib.toLower email;
   };
+
+  programs = {
+    vscode.enable = true;
+  };
 }

@@ -2,7 +2,6 @@
 
 {
   programs.vscode = {
-    enable = true;
     package = pkgs.unstable.vscodium;
 
     extensions = with pkgs.unstable.vscode-extensions; [
