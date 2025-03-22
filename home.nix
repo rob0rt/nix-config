@@ -60,5 +60,10 @@
       icons = "auto";
       enableZshIntegration = true;
     };
+
+    mise = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   } // host.programs;
 }
