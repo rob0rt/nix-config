@@ -11,6 +11,7 @@
       yoavbls.pretty-ts-errors
       bradlc.vscode-tailwindcss
       golang.go
+      svelte.svelte-vscode
     ];
 
     userSettings = {
@@ -24,6 +25,11 @@
       "[typescriptreact]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
+      "[svelte]" = {
+        "editor.defaultFormatter" = "svelte.svelte-vscode";
+      };
+      "svelte.enable-ts-plugin" = true;
+      "git.confirmSync" = false;
     };
   };
 }
