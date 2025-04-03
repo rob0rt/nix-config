@@ -1,4 +1,4 @@
-{ config, pkgs, host, ... }:
+{ pkgs, host, ... }:
 
 {
   home.username = host.username;
@@ -21,6 +21,7 @@
     azure-cli
     temporal-cli
     unstable.go
+    unstable.posting
   ];
 
   home.file = {
