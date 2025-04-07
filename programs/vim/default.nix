@@ -8,7 +8,7 @@
     vimAlias = true;
     vimdiffAlias = true;
 
-    colorschemes.dracula-nvim.enable = true;
+    colorschemes.tokyonight.enable = true;
 
     opts = {
       number = true;
