@@ -15,6 +15,12 @@
       relativenumber = true;
     };
 
+    nixpkgs = {
+      config = {
+        allowUnfree = true;
+      };
+    };
+
     keymaps = import ./keymaps.nix;
 
     plugins = import ./plugins.nix;

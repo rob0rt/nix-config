@@ -66,7 +66,18 @@
       gopls.enable = true;
       nil_ls.enable = true;
       ts_ls.enable = true;
+      svelte.enable = true;
     };
   };
+
+  treesitter = {
+    enable = true;
+
+    settings = {
+      highlight.enable = true;
+    };
+  };
+
+  copilot-vim.enable = true;
 }
 

@@ -22,6 +22,8 @@
     temporal-cli
     unstable.go
     unstable.posting
+    unstable.fastlane
+    unstable.svelte-language-server
   ];
 
   home.file = {
