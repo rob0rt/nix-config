@@ -34,6 +34,7 @@
       height = 15;
       autoExpandWidth = false;
     };
+    filesystem.filteredItems.visible = true;
   };
 
   lualine = {
