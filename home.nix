@@ -14,17 +14,11 @@
 
   home.packages = with pkgs; [
     ripgrep
-    nodejs_23
-    corepack_23
     lazygit
     hurl
-    azure-cli
-    temporal-cli
-    unstable.go
     unstable.posting
-    unstable.fastlane
-    unstable.svelte-language-server
-  ];
+  ]
+  ++ (host.packages pkgs);
 
   home.file = {
     ".config/wezterm" = {
@@ -61,11 +55,6 @@
       enable = true;
       git = true;
       icons = "auto";
-      enableZshIntegration = true;
-    };
-
-    mise = {
-      enable = true;
       enableZshIntegration = true;
     };
   } // host.programs;
