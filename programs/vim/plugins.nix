@@ -34,7 +34,13 @@
       height = 15;
       autoExpandWidth = false;
     };
-    filesystem.filteredItems.visible = true;
+    filesystem = {
+      filteredItems = {
+        hideDotfiles = false;
+        hideGitignored = true;
+        neverShow = [ ".git" ];
+      };
+    };
   };
 
   lualine = {
