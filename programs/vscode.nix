@@ -12,6 +12,7 @@
       bradlc.vscode-tailwindcss
       golang.go
       svelte.svelte-vscode
+      rust-lang.rust-analyzer
     ];
 
     userSettings = {
