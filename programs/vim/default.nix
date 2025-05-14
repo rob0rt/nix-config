@@ -19,7 +19,16 @@
 
     nixpkgs = {
       config = {
-        allowUnfree = true;
+        allowunfree = true;
+      };
+    };
+
+    lsp = {
+      servers = {
+        gopls.enable = true;
+        nil_ls.enable = true;
+        ts_ls.enable = true;
+        svelte.enable = true;
       };
     };
 

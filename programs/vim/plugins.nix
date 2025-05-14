@@ -1,4 +1,6 @@
 {
+  lspconfig.enable = true;
+
   lazy.enable = true;
 
   web-devicons.enable = true;
@@ -63,17 +65,6 @@
 
     settings = {
       auto_start = "shut-up";
-    };
-  };
-
-  lsp = {
-    enable = true;
-
-    servers = {
-      gopls.enable = true;
-      nil_ls.enable = true;
-      ts_ls.enable = true;
-      svelte.enable = true;
     };
   };
 

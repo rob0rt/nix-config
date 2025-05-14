@@ -34,6 +34,10 @@
     COREPACK_INTEGRITY_KEYS = "0";
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "jujutsu-0.23.0"
+  ];
+
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
