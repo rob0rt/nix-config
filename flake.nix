@@ -24,7 +24,7 @@
         overlays = import ./overlays.nix { inherit inputs; };
       };
       modules = [
-        nixvim.homeManagerModules.nixvim
+        nixvim.homeModules.nixvim
         ./home.nix
       ];
       extraSpecialArgs = { inherit host; };
