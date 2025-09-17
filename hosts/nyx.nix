@@ -10,7 +10,9 @@
     email = "robertlynch2012@gmail.com";
   };
 
-  packages = pkgs: [];
+  packages = pkgs: with pkgs; [
+    rustup
+  ];
 
   programs = {};
 }
