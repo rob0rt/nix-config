@@ -13,8 +13,8 @@ in {
   };
 
   packages = pkgs: with pkgs; [
-    nodejs_23
-    corepack_23
+    nodejs_24
+    corepack_24
     azure-cli
     temporal-cli
     unstable.go
