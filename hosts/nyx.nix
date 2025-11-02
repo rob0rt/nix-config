@@ -12,6 +12,8 @@
 
   packages = pkgs: with pkgs; [
     rustup
+    nodejs_24
+    corepack_24
   ];
 
   programs = {};
