@@ -12,6 +12,7 @@
 
   packages = pkgs: with pkgs; [
     rustup
+    devpod
   ];
 
   programs = {};
