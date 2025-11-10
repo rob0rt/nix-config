@@ -11,7 +11,8 @@
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim/nixos-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -33,6 +34,7 @@
     homeConfigurations = {
       "Robert.Lynch@alaskaair.com@SEAHGRLYNCHR" = homeManagerConfiguration "seahgrlynchr";
       "rmlynch@Nyx" = homeManagerConfiguration "nyx";
+      "rmlynch@calliope" = homeManagerConfiguration "calliope";
     };
   };
 }
