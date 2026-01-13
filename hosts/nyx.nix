@@ -17,6 +17,7 @@
   ];
 
   programs = {
+    # Swiftly installed manually
     zsh.initContent = lib.mkOrder 1500 ''
       . ~/.local/share/swiftly/env.sh
     '';
