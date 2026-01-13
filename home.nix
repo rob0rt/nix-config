@@ -10,6 +10,7 @@
     ./programs/git.nix
     ./programs/vim
     ./programs/vscode.nix
+    ./programs/zsh.nix
   ];
 
   home.packages = with pkgs; [
@@ -41,14 +42,6 @@
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
-
-    zsh = {
-      enable = true;
-      defaultKeymap = "emacs";
-      history = {
-        append = true;
-      };
-    };
 
     starship = {
       enable = true;

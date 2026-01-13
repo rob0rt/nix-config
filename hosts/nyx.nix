@@ -16,5 +16,9 @@
     corepack_24
   ];
 
-  programs = {};
+  programs = {
+    zsh.initContent = lib.mkOrder 1500 ''
+      . ~/.local/share/swiftly/env.sh
+    '';
+  };
 }
