@@ -14,6 +14,7 @@
         golang.go
         svelte.svelte-vscode
         rust-lang.rust-analyzer
+        swiftlang.swift-vscode
       ];
 
       userSettings = {
