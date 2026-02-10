@@ -20,6 +20,10 @@ in {
     unstable.go
     unstable.fastlane
     unstable.svelte-language-server
+
+    # Runner configuration
+    ansible
+    sshpass
   ];
 
   programs = {
