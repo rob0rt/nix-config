@@ -13,8 +13,13 @@
   packages = pkgs: with pkgs; [
     rustup
     cloudflared
-    nodejs_24
+    devenv
   ];
 
-  programs = {};
+  programs = {
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+  };
 }
