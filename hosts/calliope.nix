@@ -12,7 +12,8 @@
 
   packages = pkgs: with pkgs; [
     rustup
-    devpod
+    cloudflared
+    nodejs_24
   ];
 
   programs = {};
