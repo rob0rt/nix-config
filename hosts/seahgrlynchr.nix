@@ -25,4 +25,6 @@ in {
     ansible
     sshpass
   ];
+
+  programs = {};
 }
