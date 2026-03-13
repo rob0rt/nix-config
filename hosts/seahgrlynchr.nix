@@ -25,8 +25,4 @@ in {
     ansible
     sshpass
   ];
-
-  programs = {
-    vscode.enable = true;
-  };
 }

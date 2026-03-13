@@ -9,7 +9,6 @@
   imports = [
     ./programs/git.nix
     ./programs/vim
-    ./programs/vscode.nix
     ./programs/zsh.nix
   ];
 
