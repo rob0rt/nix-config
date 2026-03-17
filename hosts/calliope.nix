@@ -11,9 +11,8 @@
   };
 
   packages = pkgs: with pkgs; [
-    rustup
     cloudflared
-    devenv
+    unstable.devenv
   ];
 
   programs = {
