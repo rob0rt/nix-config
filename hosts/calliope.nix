@@ -12,13 +12,7 @@
 
   packages = pkgs: with pkgs; [
     cloudflared
-    unstable.devenv
   ];
 
-  programs = {
-    direnv = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-  };
+  programs = {};
 }

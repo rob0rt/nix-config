@@ -15,8 +15,7 @@
   home.packages = with pkgs; [
     ripgrep
     lazygit
-    hurl
-    unstable.posting
+    unstable.devenv
   ]
   ++ (host.packages pkgs);
 
@@ -51,6 +50,11 @@
       enable = true;
       git = true;
       icons = "auto";
+      enableZshIntegration = true;
+    };
+
+    direnv = {
+      enable = true;
       enableZshIntegration = true;
     };
   } // host.programs;
