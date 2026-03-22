@@ -1,8 +1,6 @@
 {
   lspconfig.enable = true;
 
-  lazy.enable = true;
-
   web-devicons.enable = true;
 
   guess-indent.enable = true;
@@ -19,29 +17,32 @@
 
   neo-tree = {
     enable = true;
-    enableDiagnostics = true;
-    enableGitStatus = true;
-    enableModifiedMarkers = true;
-    enableRefreshOnWrite = true;
-    closeIfLastWindow = true;
-    popupBorderStyle = "rounded";
-    buffers = {
-      bindToCwd = false;
-      followCurrentFile = {
-        enabled = true;
+
+    settings = {
+      buffers = {
+        bind_to_cwd = false;
+        follow_current_file = {
+          enabled = true;
+        };
       };
-    };
-    window = {
-      width = 40;
-      height = 15;
-      autoExpandWidth = false;
-    };
-    filesystem = {
-      filteredItems = {
-        hideDotfiles = false;
-        hideGitignored = true;
-        neverShow = [ ".git" ];
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false;
+          hide_gitignored = true;
+          never_show = [ ".git" ];
+        };
       };
+      window = {
+        width = 40;
+        height = 15;
+        auto_expand_width = false;
+      };
+      enable_diagnostics = true;
+      enable_git_status = true;
+      enable_modified_markers = true;
+      enable_refresh_on_write = true;
+      close_if_last_window = true;
+      popup_border_style = "rounded";
     };
   };
 

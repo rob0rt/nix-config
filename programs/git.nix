@@ -3,9 +3,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "Robert Lynch";
-    userEmail = host.user.email;
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Robert Lynch";
+        email = host.user.email;
+      };
       push.autoSetupRemote = "true";
       init.defaultBranch = "main";
     };

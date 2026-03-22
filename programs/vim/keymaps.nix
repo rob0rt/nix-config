@@ -4,7 +4,7 @@
     key = "<C-p>";
   }
   {
-    action = "<cmd>Neotree<CR>";
+    action = "<cmd>Neotree toggle<CR>";
     key = "<C-n>";
   }
 ]
