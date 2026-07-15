@@ -14,5 +14,5 @@
     cloudflared
   ];
 
-  programs = {};
+  programs = pkgs: {};
 }

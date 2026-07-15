@@ -57,5 +57,5 @@
       enable = true;
       enableZshIntegration = true;
     };
-  } // host.programs;
+  } // (host.programs pkgs);
 }

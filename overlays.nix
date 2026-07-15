@@ -6,5 +6,6 @@
       system = final.system;
       config.allowUnfree = true;
     };
+    llm-agents = inputs.llm-agents.packages.${final.system};
   })
 ]

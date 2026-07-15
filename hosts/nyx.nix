@@ -12,10 +12,28 @@
 
   packages = pkgs: with pkgs; [];
 
-  programs = {
+  programs = pkgs: {
     # Swiftly installed manually
     zsh.initContent = lib.mkOrder 1500 ''
       . ~/.local/share/swiftly/env.sh
     '';
+
+    opencode = {
+      enable = true;
+      package = pkgs.llm-agents.opencode;
+      settings = {
+        plugin = [ "opencode-models-discovery@latest" ];
+        provider = {
+          lemonade = {
+            npm = "@ai-sdk/openai-compatible";
+            name = "Lemonade";
+            options = {
+              baseURL = "http://192.168.1.226:13305/v1";
+              modelsDiscovery.enabled = true;
+            };
+          };
+        };
+      };
+    };
   };
 }
