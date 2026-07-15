@@ -32,7 +32,6 @@
     };
   in {
     homeConfigurations = {
-      "Robert.Lynch@alaskaair.com@SEAHGRLYNCHR" = homeManagerConfiguration "seahgrlynchr";
       "rmlynch@Nyx" = homeManagerConfiguration "nyx";
       "rmlynch@calliope" = homeManagerConfiguration "calliope";
     };
