@@ -29,10 +29,5 @@
         };
       };
     };
-
-    pi-coding-agent = {
-      enable = true;
-      package = llm-agents.pi;
-    };
   };
 }
