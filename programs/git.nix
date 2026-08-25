@@ -1,4 +1,4 @@
-{ host, pkgs, ... }:
+{ host, ... }:
 
 {
   programs.git = {
@@ -15,9 +15,6 @@
 
   programs.jujutsu = {
     enable = true;
-
-    package = pkgs.unstable.jujutsu;
-
     settings = {
       user = {
         name = "Robert Lynch";

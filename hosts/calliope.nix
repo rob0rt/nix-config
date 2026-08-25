@@ -10,9 +10,9 @@
     email = "robertlynch2012@gmail.com";
   };
 
-  packages = pkgs: with pkgs; [
+  packages = { pkgs, ... }: with pkgs; [
     cloudflared
   ];
 
-  programs = pkgs: {};
+  programs = { ... }: {};
 }

@@ -1,4 +1,4 @@
-{ pkgs, host, ... }:
+{ pkgs, host, ... }@inputs:
 
 {
   home.username = host.username;
@@ -15,9 +15,9 @@
   home.packages = with pkgs; [
     ripgrep
     lazygit
-    unstable.devenv
+    devenv
   ]
-  ++ (host.packages pkgs);
+  ++ (host.packages inputs);
 
   home.file = {
     ".config/wezterm" = {
@@ -57,5 +57,5 @@
       enable = true;
       enableZshIntegration = true;
     };
-  } // (host.programs pkgs);
+  } // (host.programs inputs);
 }
