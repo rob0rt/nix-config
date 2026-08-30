@@ -34,6 +34,7 @@
     homeConfigurations = {
       "rmlynch@Nyx" = homeManagerConfiguration "nyx";
       "rmlynch@calliope" = homeManagerConfiguration "calliope";
+      "rmlynch@pontus" = homeManagerConfiguration "pontus";
     };
   };
 }
