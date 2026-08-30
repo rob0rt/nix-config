@@ -20,6 +20,10 @@
         name = "Robert Lynch";
         email = host.user.email;
       };
+
+      ui = {
+        default-command = ["log"];
+      };
     };
   };
 }
